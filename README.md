@@ -133,11 +133,11 @@ tpgz
 │   ├───gcn_c             // game independent gamecube apis to link to
 │   │   ├───include       // header files for gcn_c
 │   │   └───src           // source code for gcn_c
-│   └───libtp_c           // game bindings for twilight princess
+│   └───libtpw_c          // game bindings for twilight princess
 │       ├───.github
 │       │   └───workflows // github action(s) used to test code compilation
-│       ├───include       // header files for libtp_c
-│       └───src           // source code for libtp_c
+│       ├───include       // header files for libtpw_c
+│       └───src           // source code for libtpw_c
 ├───include               // header files for tpgz
 │   └───fonts             // individual font properties such as width, height, glyphs, etc.
 ├───res                   // external resources to be consumed

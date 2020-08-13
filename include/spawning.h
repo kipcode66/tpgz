@@ -1,7 +1,7 @@
 #pragma once
 
 #include <stdint.h>
-#include "libtp_c/include/tp.h"
+#include "libtpw_c/include/tp.h"
 #include <string.h>
 
 struct ActorMemory {

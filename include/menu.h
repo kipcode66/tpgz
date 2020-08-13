@@ -192,7 +192,8 @@ enum FlagsIndex {
     MIDNA_ON_BACK,
     MIDNA_Z_INDEX,
     TRANSFORM_WARP_INDEX,
-    WOLF_SENSE_INDEX
+    WOLF_SENSE_INDEX,
+    HIDE_WEAPON_AS_WOLF
 };
 extern bool flags_menu_visible;
 

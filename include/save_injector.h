@@ -1,6 +1,6 @@
 #pragma once
 
-#include "libtp_c/include/tp.h"
+#include "libtpw_c/include/tp.h"
 
 // index into qlog where these exist
 #define SPAWN_INDEX 96

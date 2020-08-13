@@ -2,9 +2,9 @@
 #include "menu.h"
 #include "controller.h"
 #include "utils.h"
-#include "libtp_c/include/flag.h"
+#include "libtpw_c/include/flag.h"
 
-#define LINES 11
+#define LINES 12
 
 static Cursor cursor = {0, 0};
 bool init_once = false;
@@ -21,6 +21,7 @@ bool map_warping;
 bool midna_healthy;
 bool midna_on_back;
 bool wolf_sense;
+bool hide_weapon_as_wolf;
 
 Line lines[LINES] = {
     {"boss flag", BOSS_FLAG_INDEX, "Set the boss flag value. Press A to lock the value", true, &boss_flag},
@@ -33,7 +34,8 @@ Line lines[LINES] = {
     {"midna on back", MIDNA_ON_BACK, "Toggle flag for Midna appearing on Wolf Link's back", true, &midna_on_back},
     {"midna on z", MIDNA_Z_INDEX, "Toggle flag for being able to use Midna", true, &midna_on_z},
     {"transform/warp", TRANSFORM_WARP_INDEX, "Toggle flag for transforming/warping", true, &transform_warp},
-    {"wolf sense", WOLF_SENSE_INDEX, "Toggle flag for having wolf sense", true, &wolf_sense}};
+    {"wolf sense", WOLF_SENSE_INDEX, "Toggle flag for having wolf sense", true, &wolf_sense},
+    {"hide weapon as wolf", HIDE_WEAPON_AS_WOLF, "Toggle flag for hiding weapons as wolf", true, &hide_weapon_as_wolf}};
 
 void FlagsMenu::render(Font& font) {
     // update flags
@@ -41,13 +43,14 @@ void FlagsMenu::render(Font& font) {
     rupee_flag = (tp_gameInfo.inventory.rupee_cs_flags & (1 << 0));
     midna_charge = (tp_gameInfo.epona_stolen_and_midna_charge_flag & (1 << 0));
     transform_warp = (tp_gameInfo.transform_flag & (1 << 2));
-    midna_on_z = (tp_gameInfo.midna_on_z & (1 << 4));
+    midna_on_z = (tp_gameInfo.midna_on_up_and_hide_weapon_as_wolf & (1 << 4));
     epona_stolen = (tp_gameInfo.epona_stolen_and_midna_charge_flag & (1 << 7));
     epona_tamed = (tp_gameInfo.epona_tamed_and_map_warp_flag & (1 << 0));
     map_warping = (tp_gameInfo.epona_tamed_and_map_warp_flag & (1 << 2));
     midna_healthy = (tp_gameInfo.midna_state_flag & (1 << 3));
     midna_on_back = (tp_gameInfo.midna_on_back_flag & (1 << 3));
     wolf_sense = (tp_gameInfo.have_sense_flag & (1 << 3));
+    hide_weapon_as_wolf = (tp_gameInfo.midna_on_up_and_hide_weapon_as_wolf & (1 << 3));
 
     if (button_is_pressed(Controller::B)) {
         init_once = false;
@@ -100,7 +103,7 @@ void FlagsMenu::render(Font& font) {
                 break;
             }
             case MIDNA_Z_INDEX: {
-                tp_gameInfo.midna_on_z ^= 0x10;
+                tp_gameInfo.midna_on_up_and_hide_weapon_as_wolf ^= 0x10;
                 break;
             }
             case TRANSFORM_WARP_INDEX: {
@@ -114,6 +117,11 @@ void FlagsMenu::render(Font& font) {
 
             case MIDNA_CHARGE_INDEX: {
                 tp_gameInfo.epona_stolen_and_midna_charge_flag ^= 0x01;
+                break;
+            }
+
+            case HIDE_WEAPON_AS_WOLF: {
+                tp_gameInfo.midna_on_up_and_hide_weapon_as_wolf ^= 0x08;
                 break;
             }
         }

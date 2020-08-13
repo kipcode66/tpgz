@@ -2,7 +2,7 @@
 #include "controller.h"
 #include "utils.h"
 #include <stdio.h>
-#include "libtp_c/include/tp.h"
+#include "libtpw_c/include/tp.h"
 #define LINES SCENE_AMNT
 
 static Cursor cursor = {0, 0};

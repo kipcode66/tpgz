@@ -1,5 +1,5 @@
-#include "libtp_c/include/tp.h"
-#include "libtp_c/include/system.h"
+#include "libtpw_c/include/tp.h"
+#include "libtpw_c/include/system.h"
 #include "font.h"
 #include "timer.h"
 

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string.h>
-#include "libtp_c/include/addrs.h"
+#include "libtpw_c/include/addrs.h"
 #include "gcn_c/include/gfx.h"
 
 #define MAX_GLYPHS 94

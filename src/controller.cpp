@@ -1,10 +1,10 @@
-#include "libtp_c/include/controller.h"
+#include "libtpw_c/include/controller.h"
 #include "cheats.h"
 #include "controller.h"
 #include "menu.h"
 #include "commands.h"
-#include "libtp_c/include/tp.h"
-#include "libtp_c/include/system.h"
+#include "libtpw_c/include/tp.h"
+#include "libtpw_c/include/system.h"
 
 #define BUTTON_STATES 12
 #define REPEAT_TIME 6

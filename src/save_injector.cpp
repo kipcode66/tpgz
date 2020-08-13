@@ -1,6 +1,6 @@
 #include "save_injector.h"
-#include "libtp_c/include/tp.h"
-#include "libtp_c/include/system.h"
+#include "libtpw_c/include/tp.h"
+#include "libtpw_c/include/system.h"
 #include "log.h"
 #include "utils.h"
 #include "menu.h"

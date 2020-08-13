@@ -1,6 +1,6 @@
 #include "system.h"
-#include "libtp_c/include/tp.h"
-#include "libtp_c/include/draw.h"
+#include "libtpw_c/include/tp.h"
+#include "libtpw_c/include/draw.h"
 
 namespace System {
     bool camera_run_once;

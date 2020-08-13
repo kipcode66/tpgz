@@ -1,6 +1,6 @@
 #include "gcn_c/include/card.h"
-#include "libtp_c/include/system.h"
-#include "libtp_c/include/tp.h"
+#include "libtpw_c/include/system.h"
+#include "libtpw_c/include/tp.h"
 #include "controller.h"
 #include "menu.h"
 #include "utils.h"

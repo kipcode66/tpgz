@@ -1,7 +1,7 @@
 #include <string.h>
-#include "libtp_c/include/tp.h"
-#include "libtp_c/include/controller.h"
-#include "libtp_c/include/system.h"
+#include "libtpw_c/include/tp.h"
+#include "libtpw_c/include/controller.h"
+#include "libtpw_c/include/system.h"
 #include "controller.h"
 #include "fifo_queue.h"
 #include "rollcheck.h"

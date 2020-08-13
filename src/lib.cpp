@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdint.h>
-#include "libtp_c/include/system.h"
-#include "libtp_c/include/link.h"
-#include "libtp_c/include/tp.h"
-#include "libtp_c/include/controller.h"
+#include "libtpw_c/include/system.h"
+#include "libtpw_c/include/link.h"
+#include "libtpw_c/include/tp.h"
+#include "libtpw_c/include/controller.h"
 #include "gcn_c/include/card.h"
 #include "controller.h"
 #include "fonts/consolas.h"

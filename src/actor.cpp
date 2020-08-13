@@ -1,7 +1,7 @@
 #include "actor.h"
-#include "libtp_c/include/tp.h"
-#include "libtp_c/include/actor.h"
-#include "libtp_c/include/system.h"
+#include "libtpw_c/include/tp.h"
+#include "libtpw_c/include/actor.h"
+#include "libtpw_c/include/system.h"
 
 namespace Actor {
     bool freeze_run_once;

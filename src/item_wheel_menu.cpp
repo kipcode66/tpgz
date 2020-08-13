@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "libtp_c/include/system.h"
+#include "libtpw_c/include/system.h"
 #include "font.h"
 #include "menu.h"
 #include "controller.h"
