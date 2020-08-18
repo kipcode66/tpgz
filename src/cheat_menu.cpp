@@ -63,7 +63,7 @@ namespace Cheats {
                     }
                     case InvincibleEnemies: {
                         uint32_t patch = 0x20038000;
-                        memcpy((void *)0x80087F2C, (void *)&patch, 4);
+                        memcpy((void *)0x80087F2C, (void *)&patch, 4); // FIXME Find the right addresses and the right value to put. (probably check the Gecko code for it)
                         break;
                         
                     }
@@ -113,7 +113,7 @@ namespace Cheats {
                     }
                     case InvincibleEnemies: {
                         uint32_t unpatch = 0x7C030050;
-                        memcpy((void *)0x80087F2C, (void *)&unpatch, 4);
+                        memcpy((void *)0x80087F2C, (void *)&unpatch, 4); // FIXME Find the right addresses and the right value to put. (probably check the Gecko code for it)
                         break;
                     }
                     case SuperClawshot: {

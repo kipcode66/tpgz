@@ -107,7 +107,7 @@ namespace Utilities {
     }
 
     void render_lines(Font &font, Line input_lines[], int cursor, int LINES, float menu_toggle_switch_x_offset) {
-        font.gz_renderChars("tpgz v0.1a", 25.0f, 25.0f, 0x00CC00FF, g_drop_shadows);
+        font.gz_renderChars("tpgzw v0.1a", 25.0f, 25.0f, 0x00CC00FF, g_drop_shadows);
         float offset = 0.0f;
         for (int i = 0; i < LINES; i++) {
             // don't draw past line 15/cursor
@@ -208,12 +208,19 @@ namespace Utilities {
 
     void change_tunic_color() {
         // patch out part of setWaterDropEffect's code
-        memset((void *)0x801244a4, 0x60, 1);
-        memset((void *)0x801244a5, 0x00, 3);
-        memset((void *)0x801244a8, 0x60, 1);
-        memset((void *)0x801244a9, 0x00, 3);
-        memset((void *)0x801244ac, 0x60, 1);
-        memset((void *)0x801244ad, 0x00, 3);
+        memset((void *)0x8011759c, 0x60, 1);
+        memset((void *)0x8011759d, 0x00, 3);
+        memset((void *)0x801175ac, 0x60, 1);
+        memset((void *)0x801175ad, 0x00, 3);
+        memset((void *)0x801175bc, 0x60, 1);
+        memset((void *)0x801175bd, 0x00, 3);
+        // patch out part of setSwordUpColorEffect's code
+        memset((void *)0x801176B0, 0x60, 1);
+        memset((void *)0x801176B1, 0x00, 3);
+        memset((void *)0x801176C8, 0x60, 1);
+        memset((void *)0x801176C9, 0x00, 3);
+        memset((void *)0x801176E0, 0x60, 1);
+        memset((void *)0x801176E1, 0x00, 3);
 
         if (tp_gameInfo.link_tunic_ptr) {
             switch (g_tunic_color) {

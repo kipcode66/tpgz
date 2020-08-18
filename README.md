@@ -106,7 +106,7 @@ warping menu:
 
 You will need the **Twilight Princess ISO** -- currently only the US version is supported.
 
-1. Download the latest release [here](https://github.com/hallcristobal/tpgz/releases).
+1. Download the latest release [here](https://github.com/hallcristobal/tpgzw/releases).
 
 2. Unzip the contents into a folder and run the `romhack-patcher.exe`
 

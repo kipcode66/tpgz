@@ -272,14 +272,14 @@ void HundoSavesMenu::render(Font& font) {
     if (current_input == 256 && a_held == false) {
         switch (cursor.x) {
             case HND_GOATS_1_INDEX: {
-                loadFile("tpgz/save_files/hundo/goats.bin");
+                loadFile("tpgzw/save_files/hundo/goats.bin");
                 default_load();
                 practice_file.inject_options_during_load = goats_1;
                 break;
             }
 
             case HND_ORDON_GATE_CLIP_INDEX: {
-                loadFile("tpgz/save_files/hundo/ordon_gate_clip.bin");
+                loadFile("tpgzw/save_files/hundo/ordon_gate_clip.bin");
                 default_load();
                 camera = {827.497559f, 329.622986f, -4532.90723f, 833.467468f, 477.604675f, -4241.97266f, 1.26012994f, 280.0f};
                 angle = 498;
@@ -290,25 +290,25 @@ void HundoSavesMenu::render(Font& font) {
             }
 
             case HND_GOATS_2_INDEX: {
-                loadFile("tpgz/save_files/hundo/goats_2.bin");
+                loadFile("tpgzw/save_files/hundo/goats_2.bin");
                 default_load();
                 practice_file.inject_options_during_load = goats_2;
                 break;
             }
 
             case HND_FARON_TWILIGHT_INDEX: {
-                loadFile("tpgz/save_files/hundo/faron_twilight.bin");
+                loadFile("tpgzw/save_files/hundo/faron_twilight.bin");
                 default_load();
                 break;
             }
 
             case HND_EMS_INDEX: {
-                loadFile("tpgz/save_files/hundo/ems.bin");
+                loadFile("tpgzw/save_files/hundo/ems.bin");
                 default_load();
                 break;
             }
             case HND_MIST_INDEX: {
-                loadFile("tpgz/save_files/hundo/purple_mist.bin");
+                loadFile("tpgzw/save_files/hundo/purple_mist.bin");
                 default_load();
                 angle = 40758;
                 position = {-23524.6152f, 250.0f, -16220.166f};
@@ -318,31 +318,31 @@ void HundoSavesMenu::render(Font& font) {
                 break;
             }
             case HND_FRST_BIT_INDEX: {
-                loadFile("tpgz/save_files/hundo/forest_bit.bin");
+                loadFile("tpgzw/save_files/hundo/forest_bit.bin");
                 default_load();
                 break;
             }
 
             case HND_FRST_2_INDEX: {
-                loadFile("tpgz/save_files/hundo/forest_2.bin");
+                loadFile("tpgzw/save_files/hundo/forest_2.bin");
                 default_load();
                 break;
             }
 
             case HND_OOKLESS_INDEX: {
-                loadFile("tpgz/save_files/hundo/ookless.bin");
+                loadFile("tpgzw/save_files/hundo/ookless.bin");
                 default_load();
                 break;
             }
 
             case HND_ELDIN_TWILIGHT_INDEX: {
-                loadFile("tpgz/save_files/hundo/eldin_twilight.bin");
+                loadFile("tpgzw/save_files/hundo/eldin_twilight.bin");
                 default_load();
                 break;
             }
 
             case HND_LANAYRU_GATE_CLIP_INDEX: {
-                loadFile("tpgz/save_files/hundo/lanayru_gate_clip.bin");
+                loadFile("tpgzw/save_files/hundo/lanayru_gate_clip.bin");
                 default_load();
                 camera = {-63064.2148f, -8969.97656f, 71661.0781f, -62655.8125f, -8900.91309f, 71903.6328f, -1.30928958f, 280.000092f};
                 angle = 44248;
@@ -352,33 +352,33 @@ void HundoSavesMenu::render(Font& font) {
                 break;
             }
             case HND_PILLAR_CLIP_INDEX: {
-                loadFile("tpgz/save_files/hundo/pillar_clip.bin");
+                loadFile("tpgzw/save_files/hundo/pillar_clip.bin");
                 default_load();
                 break;
             }
             case HND_LAKEBED_1_INDEX: {
-                loadFile("tpgz/save_files/hundo/lakebed_1.bin");
+                loadFile("tpgzw/save_files/hundo/lakebed_1.bin");
                 default_load();
                 break;
             }
             case HND_TOAD_INDEX: {
-                loadFile("tpgz/save_files/hundo/deku_toad.bin");
+                loadFile("tpgzw/save_files/hundo/deku_toad.bin");
                 default_load();
                 break;
             }
             case HND_KARG_INDEX: {
-                loadFile("tpgz/save_files/hundo/karg.bin");
+                loadFile("tpgzw/save_files/hundo/karg.bin");
                 default_load();
                 practice_file.inject_options_during_load = karg_oob;
                 break;
             }
             case HND_LANAYRU_TWILIGHT_INDEX: {
-                loadFile("tpgz/save_files/hundo/lanayru_twilight.bin");
+                loadFile("tpgzw/save_files/hundo/lanayru_twilight.bin");
                 default_load();
                 break;
             }
             case HND_BOSS_BUG_INDEX: {
-                loadFile("tpgz/save_files/hundo/boss_bug.bin");
+                loadFile("tpgzw/save_files/hundo/boss_bug.bin");
                 default_load();
                 angle = 21504;
                 position = {-89100.00f, -18811.2363f, 39410.00f};
@@ -386,7 +386,7 @@ void HundoSavesMenu::render(Font& font) {
                 break;
             }
             case HND_KB_2_INDEX: {
-                loadFile("tpgz/save_files/hundo/kb2.bin");
+                loadFile("tpgzw/save_files/hundo/kb2.bin");
                 default_load();
                 camera = {-92098.1797f, -5398.54883f, 22599.9102f, -92795.1328f, -5302.87988f, 22505.3359f, 0.0f, 0.5f};
                 angle = 14957;
@@ -396,13 +396,13 @@ void HundoSavesMenu::render(Font& font) {
                 break;
             }
             case HND_ESCORT_INDEX: {
-                loadFile("tpgz/save_files/hundo/kb2.bin");
+                loadFile("tpgzw/save_files/hundo/kb2.bin");
                 default_load();
                 practice_file.inject_options_during_load = escort;
                 break;
             }
             case HND_COROTD_INDEX: {
-                loadFile("tpgz/save_files/hundo/corotd.bin");
+                loadFile("tpgzw/save_files/hundo/corotd.bin");
                 default_load();
                 angle = 27714;
                 position = {-13715.0712f, 0.00f, -14238.0654f};
@@ -411,23 +411,23 @@ void HundoSavesMenu::render(Font& font) {
                 break;
             }
             case HND_GM_INDEX: {
-                loadFile("tpgz/save_files/hundo/gm.bin");
+                loadFile("tpgzw/save_files/hundo/gm.bin");
                 default_load();
                 break;
             }
             case HND_DANGORO_INDEX: {
-                loadFile("tpgz/save_files/hundo/dangoro.bin");
+                loadFile("tpgzw/save_files/hundo/dangoro.bin");
                 default_load();
                 practice_file.inject_options_during_load = dangoro;
                 break;
             }
             case HND_KB_1_INDEX: {
-                loadFile("tpgz/save_files/hundo/kb1.bin");
+                loadFile("tpgzw/save_files/hundo/kb1.bin");
                 default_load();
                 break;
             }
             case HND_LAKEBED_BK_SKIP_INDEX: {
-                loadFile("tpgz/save_files/hundo/lakebed_bk_skip.bin");
+                loadFile("tpgzw/save_files/hundo/lakebed_bk_skip.bin");
                 default_load();
                 camera = {71.9835968f, 1660.0f, 2839.01587f, 71.9835968f, 1719.93542f, 2969.04565f, 0.0f, 0.5f};
                 angle = 32767;
@@ -438,18 +438,18 @@ void HundoSavesMenu::render(Font& font) {
                 break;
             }
             case HND_MORPHEEL_INDEX: {
-                loadFile("tpgz/save_files/hundo/morpheel.bin");
+                loadFile("tpgzw/save_files/hundo/morpheel.bin");
                 default_load();
                 practice_file.inject_options_after_load = morpheel;
                 break;
             }
             case HND_STAR_1_INDEX: {
-                loadFile("tpgz/save_files/hundo/star_1.bin");
+                loadFile("tpgzw/save_files/hundo/star_1.bin");
                 default_load();
                 break;
             }
             case HND_MDH_TOWER_INDEX: {
-                loadFile("tpgz/save_files/hundo/mdh_tower.bin");
+                loadFile("tpgzw/save_files/hundo/mdh_tower.bin");
                 default_load();
                 camera = {25256.7285f, -2919.95215f, 2839.01587f, 10193.6064f, 25254.7852f, -2874.2627f, -2.0f, 200.0f};
                 angle = 32025;
@@ -459,48 +459,48 @@ void HundoSavesMenu::render(Font& font) {
                 break;
             }
             case HND_MDH_BRIDGE_INDEX: {
-                loadFile("tpgz/save_files/hundo/mdh_bridge.bin");
+                loadFile("tpgzw/save_files/hundo/mdh_bridge.bin");
                 default_load();
                 break;
             }
             case HND_POST_MDH_INDEX: {
-                loadFile("tpgz/save_files/hundo/post_mdh.bin");
+                loadFile("tpgzw/save_files/hundo/post_mdh.bin");
                 default_load();
                 break;
             }
             case HND_MOUNTAIN_INDEX: {
-                loadFile("tpgz/save_files/hundo/mountain.bin");
+                loadFile("tpgzw/save_files/hundo/mountain.bin");
                 default_load();
                 break;
             }
             case HND_IZA_1_SKIP_INDEX: {
-                loadFile("tpgz/save_files/hundo/iza_1_skip.bin");
+                loadFile("tpgzw/save_files/hundo/iza_1_skip.bin");
                 default_load();
                 practice_file.inject_options_during_load = iza_1_skip;
                 break;
             }
             case HND_IZA_2_INDEX: {
-                loadFile("tpgz/save_files/hundo/iza_2.bin");
+                loadFile("tpgzw/save_files/hundo/iza_2.bin");
                 default_load();
                 break;
             }
             case HND_LH_CAVE_INDEX: {
-                loadFile("tpgz/save_files/hundo/lh_cave.bin");
+                loadFile("tpgzw/save_files/hundo/lh_cave.bin");
                 default_load();
                 break;
             }
             case HND_BULBLIN_CAMP_INDEX: {
-                loadFile("tpgz/save_files/hundo/camp.bin");
+                loadFile("tpgzw/save_files/hundo/camp.bin");
                 default_load();
                 break;
             }
             case HND_AG_INDEX: {
-                loadFile("tpgz/save_files/hundo/ag.bin");
+                loadFile("tpgzw/save_files/hundo/ag.bin");
                 default_load();
                 break;
             }
             case HND_POE_1_SKIP_INDEX: {
-                loadFile("tpgz/save_files/hundo/poe_1_skip.bin");
+                loadFile("tpgzw/save_files/hundo/poe_1_skip.bin");
                 default_load();
                 camera = {-2047.97168f, 130.16568f, -587.317139f, -1779.00293f, 213.707397f, -584.686768f, 0.0f, 280.0f};
                 angle = 49030;
@@ -510,34 +510,34 @@ void HundoSavesMenu::render(Font& font) {
                 break;
             }
             case HND_DSS_INDEX: {
-                loadFile("tpgz/save_files/hundo/death_sword_skip.bin");
+                loadFile("tpgzw/save_files/hundo/death_sword_skip.bin");
                 default_load();
                 break;
             }
             case HND_STALLORD_INDEX: {
-                loadFile("tpgz/save_files/hundo/stallord.bin");
+                loadFile("tpgzw/save_files/hundo/stallord.bin");
                 default_load();
                 practice_file.inject_options_during_load = stallord;
                 break;
             }
             case HND_GORGE_INDEX: {
-                loadFile("tpgz/save_files/hundo/gorge_arc.bin");
+                loadFile("tpgzw/save_files/hundo/gorge_arc.bin");
                 default_load();
                 break;
             }
             case HND_SPR_INDEX: {
-                loadFile("tpgz/save_files/hundo/spr.bin");
+                loadFile("tpgzw/save_files/hundo/spr.bin");
                 default_load();
                 break;
             }
             case HND_DARK_HAMMER_INDEX: {
-                loadFile("tpgz/save_files/hundo/darkhammer.bin");
+                loadFile("tpgzw/save_files/hundo/darkhammer.bin");
                 default_load();
                 //figure out how to disable armor sets then load in with boss flag for instant fight
                 break;
             }
             case HND_SPR_SUPERJUMP_INDEX: {
-                loadFile("tpgz/save_files/hundo/spr_superjump.bin");
+                loadFile("tpgzw/save_files/hundo/spr_superjump.bin");
                 default_load();
                 camera = {1529.35425f, 466.16306f, 3684.08252f, 1765.20581f, 691.830688f, 3662.42749f, 3.7f, 280.0f};
                 angle = 50120;
@@ -547,7 +547,7 @@ void HundoSavesMenu::render(Font& font) {
                 break;
             }
             case HND_SPR_BK_LJA_INDEX: {
-                loadFile("tpgz/save_files/hundo/spr_bk_lja.bin");
+                loadFile("tpgzw/save_files/hundo/spr_bk_lja.bin");
                 default_load();
                 angle = 32887;
                 position = {-2171.19f, 973.96f, -2384.89f};
@@ -556,55 +556,55 @@ void HundoSavesMenu::render(Font& font) {
                 break;
             }
             case HND_SPR_BK_ROOM_INDEX: {
-                loadFile("tpgz/save_files/hundo/spr_bk_lja.bin");
+                loadFile("tpgzw/save_files/hundo/spr_bk_lja.bin");
                 default_load();
                 practice_file.inject_options_during_load = spr_bosskey;
                 break;
             }
             case HND_BLIZZETA_INDEX: {
-                loadFile("tpgz/save_files/hundo/blizzeta.bin");
+                loadFile("tpgzw/save_files/hundo/blizzeta.bin");
                 default_load();
                 break;
             }
             case HND_BOMB_BOOST_INDEX: {
-                loadFile("tpgz/save_files/hundo/nf_bomb_boost.bin");
+                loadFile("tpgzw/save_files/hundo/nf_bomb_boost.bin");
                 default_load();
                 break;
             }
             case HND_GROVE_2_INDEX: {
-                loadFile("tpgz/save_files/hundo/grove_2.bin");
+                loadFile("tpgzw/save_files/hundo/grove_2.bin");
                 default_load();
                 break;
             }
             case HND_TOT_INDEX: {
-                loadFile("tpgz/save_files/hundo/tot.bin");
+                loadFile("tpgzw/save_files/hundo/tot.bin");
                 default_load();
                 break;
             }
             case HND_EARLY_POE_INDEX: {
-                loadFile("tpgz/save_files/hundo/tot_early_poe.bin");
+                loadFile("tpgzw/save_files/hundo/tot_early_poe.bin");
                 default_load();
                 practice_file.inject_options_during_load = tot_early_poe;
                 break;
             }
             case HND_STATUE_THROWS_INDEX: {
-                loadFile("tpgz/save_files/hundo/tot_statue_throws.bin");
+                loadFile("tpgzw/save_files/hundo/tot_statue_throws.bin");
                 default_load();
                 break;
             }
             case HND_EARLY_HP_INDEX: {
-                loadFile("tpgz/save_files/hundo/tot_early_hp.bin");
+                loadFile("tpgzw/save_files/hundo/tot_early_hp.bin");
                 default_load();
                 practice_file.inject_options_during_load = tot_early_hp;
                 break;
             }
             case HND_DARKNUT_INDEX: {
-                loadFile("tpgz/save_files/hundo/tot_darknut.bin");
+                loadFile("tpgzw/save_files/hundo/tot_darknut.bin");
                 default_load();
                 break;
             }
             case HND_DOT_SKIP_INDEX: {
-                loadFile("tpgz/save_files/hundo/dot_skip.bin");
+                loadFile("tpgzw/save_files/hundo/dot_skip.bin");
                 default_load();
                 camera = {1361.59766f, -33.1954155f, -1090.47632f, 1396.36316f, 9.51973343f, -719.644531f, -1.7f, 220.0f};
                 angle = 33673;
@@ -615,22 +615,22 @@ void HundoSavesMenu::render(Font& font) {
                 break;
             }
             case HND_ARMOGOHMA_INDEX: {
-                loadFile("tpgz/save_files/hundo/armogohma.bin");
+                loadFile("tpgzw/save_files/hundo/armogohma.bin");
                 default_load();
                 break;
             }
             case HND_POST_TOT_INDEX: {
-                loadFile("tpgz/save_files/hundo/post_tot.bin");
+                loadFile("tpgzw/save_files/hundo/post_tot.bin");
                 default_load();
                 break;
             }
             case HND_HOTSPRING_INDEX: {
-                loadFile("tpgz/save_files/hundo/hotspring.bin");
+                loadFile("tpgzw/save_files/hundo/hotspring.bin");
                 default_load();
                 break;
             }
             case HND_BELL_INDEX: {
-                loadFile("tpgz/save_files/hundo/silver_rupee.bin");
+                loadFile("tpgzw/save_files/hundo/silver_rupee.bin");
                 default_load();
                 camera = {961.308044f, 203.885788f, 4184.82471f, 1220.0835f, 320.043884f, 4269.48779f, 2.7f, 280.0f};
                 angle = 45836;
@@ -640,17 +640,17 @@ void HundoSavesMenu::render(Font& font) {
                 break;
             }
             case HND_FBF_INDEX: {
-                loadFile("tpgz/save_files/hundo/fbf.bin");
+                loadFile("tpgzw/save_files/hundo/fbf.bin");
                 default_load();
                 break;
             }
             case HND_PUZZLE_INDEX: {
-                loadFile("tpgz/save_files/hundo/ice_puzzle.bin");
+                loadFile("tpgzw/save_files/hundo/ice_puzzle.bin");
                 default_load();
                 break;
             }
             case HND_ARCHERY_INDEX: {
-                loadFile("tpgz/save_files/hundo/hv_archery.bin");
+                loadFile("tpgzw/save_files/hundo/hv_archery.bin");
                 default_load();
                 angle = 64520;
                 position = {3125.57f, -62.16f, -9360.22f};
@@ -659,7 +659,7 @@ void HundoSavesMenu::render(Font& font) {
                 break;
             }
             case HND_CITY_EARLY_INDEX: {
-                loadFile("tpgz/save_files/hundo/cits_early.bin");
+                loadFile("tpgzw/save_files/hundo/cits_early.bin");
                 default_load();
                 angle = 21207;
                 position = {220.75f, -769.96f, -3299.14f};
@@ -669,7 +669,7 @@ void HundoSavesMenu::render(Font& font) {
                 break;
             }
             case HND_CITY_1_INDEX: {
-                loadFile("tpgz/save_files/hundo/cits_1.bin");
+                loadFile("tpgzw/save_files/hundo/cits_1.bin");
                 default_load();
                 camera = {1313.54285f, -234.203003f, 5545.16846f, 1027.53259f, -108.096123f, 5605.23047f, 0.0f, 318.295868f};
                 angle = 16384;
@@ -679,84 +679,84 @@ void HundoSavesMenu::render(Font& font) {
                 break;
             }
             case HND_AERALFOS_INDEX: {
-                loadFile("tpgz/save_files/hundo/aeralfos_skip.bin");
+                loadFile("tpgzw/save_files/hundo/aeralfos_skip.bin");
                 default_load();
                 break;
             }
             case HND_CITY_2_INDEX: {
-                loadFile("tpgz/save_files/hundo/cits_2.bin");
+                loadFile("tpgzw/save_files/hundo/cits_2.bin");
                 default_load();
                 break;
             }
             case HND_POE_CYCLE_INDEX: {
-                loadFile("tpgz/save_files/hundo/cits_poe_cycle.bin");
+                loadFile("tpgzw/save_files/hundo/cits_poe_cycle.bin");
                 default_load();
                 practice_file.inject_options_during_load = cits_poe_cycle;
                 break;
             }
             case HND_FAN_TOWER_INDEX: {
-                loadFile("tpgz/save_files/hundo/fan_tower.bin");
+                loadFile("tpgzw/save_files/hundo/fan_tower.bin");
                 default_load();
                 break;
             }
             case HND_ARGOROK_INDEX: {
-                loadFile("tpgz/save_files/hundo/argorok.bin");
+                loadFile("tpgzw/save_files/hundo/argorok.bin");
                 default_load();
                 practice_file.inject_options_during_load = argorok;
                 break;
             }
             case HND_STAR_2_INDEX: {
-                loadFile("tpgz/save_files/hundo/star_2.bin");
+                loadFile("tpgzw/save_files/hundo/star_2.bin");
                 default_load();
                 break;
             }
             case HND_PALACE_1_INDEX: {
-                loadFile("tpgz/save_files/hundo/palace_1.bin");
+                loadFile("tpgzw/save_files/hundo/palace_1.bin");
                 default_load();
                 break;
             }
             case HND_PALACE_2_INDEX: {
-                loadFile("tpgz/save_files/hundo/palace_2.bin");
+                loadFile("tpgzw/save_files/hundo/palace_2.bin");
                 default_load();
                 practice_file.inject_options_after_load = palace2;
                 break;
             }
             case HND_EARLY_PLATFORM_INDEX: {
-                loadFile("tpgz/save_files/hundo/early_platform.bin");
+                loadFile("tpgzw/save_files/hundo/early_platform.bin");
                 default_load();
                 break;
             }
             case HND_ZANT_INDEX: {
-                loadFile("tpgz/save_files/hundo/zant.bin");
+                loadFile("tpgzw/save_files/hundo/zant.bin");
                 default_load();
                 break;
             }
             case HND_COO_INDEX: {
-                loadFile("tpgz/save_files/hundo/coo.bin");
+                loadFile("tpgzw/save_files/hundo/coo.bin");
                 default_load();
                 practice_file.inject_options_during_load = cave_of_ordeals;
                 break;
             }
             case HND_COO_10_INDEX: {
-                loadFile("tpgz/save_files/hundo/coo_10.bin");
+                loadFile("tpgzw/save_files/hundo/coo_10.bin");
                 default_load();
                 practice_file.inject_options_during_load = cave_of_ordeals;
                 break;
             }
             case HND_COO_20_INDEX: {
-                loadFile("tpgz/save_files/hundo/coo_20.bin");
+                loadFile("tpgzw/save_files/hundo/coo_20.bin");
                 default_load();
                 practice_file.inject_options_during_load = cave_of_ordeals;
                 break;
             }
             case HND_COO_30_INDEX: {
-                loadFile("tpgz/save_files/hundo/coo_30.bin");
+                loadFile("tpgzw/save_files/hundo/coo_30.bin");
                 default_load();
                 practice_file.inject_options_during_load = cave_of_ordeals;
                 break;
             }
             case HND_CATS_INDEX: {
-                loadFile("tpgz/save_files/hundo/cats.bin");
+                loadFile("tpgzw/save_files/hundo/cats.bin");
                 default_load();
                 camera = {5309.32373f, 160.1f, -3581.83423f, 4893.25391f, 160.117676f, -3524.51245f, 0.0f, 0.5f};
                 angle = 17282;
@@ -766,27 +766,27 @@ void HundoSavesMenu::render(Font& font) {
                 break;
             }
             case HND_HYRULE_INDEX: {
-                loadFile("tpgz/save_files/hundo/hc.bin");
+                loadFile("tpgzw/save_files/hundo/hc.bin");
                 default_load();
                 break;
             }
             case HND_DARKNUT_SKIP_INDEX: {
-                loadFile("tpgz/save_files/hundo/hc_darknut.bin");
+                loadFile("tpgzw/save_files/hundo/hc_darknut.bin");
                 default_load();
                 break;
             }
             case HND_FINAL_TOWER_INDEX: {
-                loadFile("tpgz/save_files/hundo/hc_tower.bin");
+                loadFile("tpgzw/save_files/hundo/hc_tower.bin");
                 default_load();
                 break;
             }
             case HND_BEAST_GANON_INDEX: {
-                loadFile("tpgz/save_files/hundo/beast_ganon.bin");
+                loadFile("tpgzw/save_files/hundo/beast_ganon.bin");
                 default_load();
                 break;
             }
             case HND_HORSEBACK_GANON_INDEX: {
-                loadFile("tpgz/save_files/hundo/horseback_ganon.bin");
+                loadFile("tpgzw/save_files/hundo/horseback_ganon.bin");
                 default_load();
                 break;
             }

@@ -88,8 +88,8 @@ namespace Commands {
     }  // namespace Commands
 
     void gorge_void() {
-        if (button_this_frame == 0x0050 && button_last_frame != 0x0050) {
-            loadFile("tpgz/save_files/any/gorge_void.bin");
+        if (button_this_frame == 0x6A00 && button_last_frame != 0x6A00) {
+            loadFile("tpgzw/save_files/any/gorge_void.bin");
             practice_file.inject_options_before_load = SaveInjector::inject_default_before;
             practice_file.inject_options_during_load = GorgeVoidIndicator::warp_to_gorge;
             practice_file.inject_options_after_load = GorgeVoidIndicator::prep_rupee_roll;
@@ -104,23 +104,21 @@ namespace Commands {
     };
 
     static Command Commands[7] = {
-        {false, 0x0028, store_position},
-        {false, 0x0024, load_position},
-        {false, 0x0120, moon_jump},
-        {false, 0x1160, reload_area},
-        {false, 0x0110, toggle_timer},
-        {false, 0x0210, hit_reset},
-        {false, 0x0050, gorge_void}};
+        {false, 0x6200, store_position},
+        {false, 0x6100, load_position},
+        {false, 0x6800, moon_jump},
+        {false, 0x6410, reload_area},
+        {false, 0x6C00, toggle_timer},
+        {false, 0x6420, hit_reset},
+        {false, 0x6A00, gorge_void}};
 
     void process_inputs() {
-        button_this_frame = tp_mPadStatus.sval;
+        button_this_frame = tp_mPad.buttons;
         for (auto c : Commands) {
-            if (c.active == true && tp_mPadStatus.sval == c.buttons) {
+            if (c.active == true && tp_mPad.buttons == c.buttons) {
                 c.command();
                 Controller::set_buttons_down(0x0);
                 Controller::set_buttons_pressed(0x0);
-                tp_mPadButton.sval = 0x0;
-                tp_mPadStatus.sval = 0x0;
             };
         };
         button_last_frame = button_this_frame;

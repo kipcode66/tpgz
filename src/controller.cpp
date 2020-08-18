@@ -6,7 +6,7 @@
 #include "libtpw_c/include/tp.h"
 #include "libtpw_c/include/system.h"
 
-#define BUTTON_STATES 12
+#define BUTTON_STATES 13
 #define REPEAT_TIME 6
 #define REPEAT_DELAY 10
 
@@ -27,22 +27,23 @@ struct ButtonState {
 };
 
 static ButtonState buttonStates[BUTTON_STATES] = {
-    {Controller::Pad::DPAD_LEFT, 0xFFFFFFFF, false},
-    {Controller::Pad::DPAD_RIGHT, 0xFFFFFFFF, false},
-    {Controller::Pad::DPAD_DOWN, 0xFFFFFFFF, false},
-    {Controller::Pad::DPAD_UP, 0xFFFFFFFF, false},
-    {Controller::Pad::Z, 0xFFFFFFFF, false},
-    {Controller::Pad::R, 0xFFFFFFFF, false},
-    {Controller::Pad::L, 0xFFFFFFFF, false},
-    {Controller::Pad::A, 0xFFFFFFFF, false},
-    {Controller::Pad::B, 0xFFFFFFFF, false},
-    {Controller::Pad::X, 0xFFFFFFFF, false},
-    {Controller::Pad::Y, 0xFFFFFFFF, false},
-    {Controller::Pad::START, 0xFFFFFFFF, false}};
+    {Controller::Mote::DPAD_LEFT, 0xFFFFFFFF, false},
+    {Controller::Mote::DPAD_RIGHT, 0xFFFFFFFF, false},
+    {Controller::Mote::DPAD_DOWN, 0xFFFFFFFF, false},
+    {Controller::Mote::DPAD_UP, 0xFFFFFFFF, false},
+    {Controller::Mote::PLUS, 0xFFFFFFFF, false},
+    {Controller::Mote::TWO, 0xFFFFFFFF, false},
+    {Controller::Mote::ONE, 0xFFFFFFFF, false},
+    {Controller::Mote::B, 0xFFFFFFFF, false},
+    {Controller::Mote::A, 0xFFFFFFFF, false},
+    {Controller::Mote::MINUS, 0xFFFFFFFF, false},
+    {Controller::Mote::Z, 0xFFFFFFFF, false},
+    {Controller::Mote::C, 0xFFFFFFFF, false},
+    {Controller::Mote::HOME, 0xFFFFFFFF, false}};
 
 extern "C" uint32_t read_controller() {
     sButtons_down_last_frame = sButtons_down;
-    sButtons_down = tp_mPadStatus.sval;
+    sButtons_down = tp_mPad.buttons;
     sButtons_pressed = sButtons_down & (0xFFFF ^ sButtons_down_last_frame);
 
     uint8_t idx = 0;
@@ -59,14 +60,14 @@ extern "C" uint32_t read_controller() {
         memory_visible || warping_visible || flags_menu_visible ||
         scene_menu_visible || any_saves_visible || hundo_saves_visible) {
         current_input = Controller::get_current_inputs();
-        a_held = a_held_last_frame && current_input == 0x0100;
-        a_held_last_frame = current_input == 0x0100;
+        a_held = a_held_last_frame && current_input == Controller::Mote::A;
+        a_held_last_frame = current_input == Controller::Mote::A;
 
         // prevent accidentally moving cursor down when opening menu
         if (!can_move_cursor) {
-            if (current_input & Controller::Pad::DPAD_UP) {
+            if (current_input & Controller::Mote::MINUS) {
                 can_move_cursor = true;
-            } else if (current_input & (Controller::Pad::L | Controller::Pad::R)) {
+            } else if (current_input & (Controller::Mote::Z | Controller::Mote::C)) {
                 sNum_frames_cursor_buffer = 0;
             } else if (sNum_frames_cursor_buffer < 1) {
                 sNum_frames_cursor_buffer = 1;
@@ -81,8 +82,6 @@ extern "C" uint32_t read_controller() {
 
         Controller::set_buttons_down(0x0);
         Controller::set_buttons_pressed(0x0);
-        tp_mPadStatus.sval = 0x0;
-        tp_mPadButton.sval = 0x0;
     } else {
         can_move_cursor = false;
         sNum_frames_cursor_buffer = 0;
@@ -107,7 +106,7 @@ namespace Controller {
     }
 
     uint16_t get_current_inputs() {
-        return tp_mPadStatus.sval;
+        return tp_mPad.buttons;
     }
 
     bool button_is_held(int idx) {

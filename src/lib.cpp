@@ -4,7 +4,8 @@
 #include "libtpw_c/include/link.h"
 #include "libtpw_c/include/tp.h"
 #include "libtpw_c/include/controller.h"
-#include "gcn_c/include/card.h"
+#include "libtpw_c/include/addrs.h"
+//#include "gcn_c/include/card.h"
 #include "controller.h"
 #include "fonts/consolas.h"
 #include "font.h"
@@ -32,12 +33,12 @@ void init() {
 }
 
 void game_loop() {
-    using namespace Controller::Pad;
+    using namespace Controller::Mote;
     
     // check and load gz settings card if found
     // Utilities::load_gz_card(card_load);
 
-    if (tp_mPadStatus.sval == (L | R | DPAD_DOWN) && tp_fopScnRq.isLoading != 1) {
+    if (tp_mPad.buttons == (Z | C | MINUS) && tp_fopScnRq.isLoading != 1) {
         mm_visible = true;
         fifo_visible = false;
     }
@@ -46,6 +47,9 @@ void game_loop() {
     }
 
     GZFlags::apply_active_flags();
+
+    // This is the funciton that game_loop replaces when patched, so we call it here
+    tp_fapGm_Execute();
 }
 
 void draw() {

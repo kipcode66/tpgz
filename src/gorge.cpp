@@ -13,6 +13,7 @@
 
 bool inject_gorge_flag = false;
 
+// FIXME Get all the value from the Wii GV.
 namespace GorgeVoidIndicator {
     using namespace Controller;
 
@@ -106,23 +107,23 @@ namespace GorgeVoidIndicator {
             // only care about 10f before and after
             if (counter_difference > 123 && after_cs_val < 10) {
                 // went early
-                if (!got_it && !(button_is_held(L) && button_is_held(A)) && (counter_difference < WARP_CS_FRAMES) &&
-                    (button_is_down(A) && button_is_down(L))) {
+                if (!got_it && !(button_is_held(Z) && button_is_held(A)) && (counter_difference < WARP_CS_FRAMES) &&
+                    (button_is_down(A) && button_is_down(Z))) {
                     int final_val = WARP_CS_FRAMES - counter_difference;
                     sprintf(buf, "%df early", final_val);
                     FIFOQueue::push(buf, Queue);
                 }
 
                 // got it
-                else if (!got_it && !(button_is_held(L) && button_is_held(A)) && (counter_difference == WARP_CS_FRAMES) &&
-                         (button_is_down(A) && button_is_down(L))) {
+                else if (!got_it && !(button_is_held(Z) && button_is_held(A)) && (counter_difference == WARP_CS_FRAMES) &&
+                         (button_is_down(A) && button_is_down(Z))) {
                     FIFOQueue::push("got it", Queue);
                     got_it = true;
                 }
 
                 // went late
-                else if (!got_it && !(button_is_held(L) && button_is_held(A)) && after_cs_val > 0 &&
-                         (button_is_down(A) && button_is_down(L))) {
+                else if (!got_it && !(button_is_held(Z) && button_is_held(A)) && after_cs_val > 0 &&
+                         (button_is_down(A) && button_is_down(Z))) {
                     sprintf(buf, "%df late", after_cs_val);
                     FIFOQueue::push(buf, Queue);
                 }

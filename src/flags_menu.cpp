@@ -119,7 +119,6 @@ void FlagsMenu::render(Font& font) {
                 tp_gameInfo.epona_stolen_and_midna_charge_flag ^= 0x01;
                 break;
             }
-
             case HIDE_WEAPON_AS_WOLF: {
                 tp_gameInfo.midna_on_up_and_hide_weapon_as_wolf ^= 0x08;
                 break;

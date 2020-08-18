@@ -49,7 +49,7 @@ namespace RollIndicator {
             log.PrintLog(buf, DEBUG);
             sprintf(buf, "missed: %d", missed_counter);
             log.PrintLog(buf, DEBUG);
-            sprintf(buf, "inputs: %d", tp_mPadStatus.sval);
+            sprintf(buf, "inputs: %d", tp_mPad.buttons);
             log.PrintLog(buf, DEBUG);
             sprintf(buf, "action: %d", action_id);
             log.PrintLog(buf, DEBUG);
