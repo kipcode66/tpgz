@@ -1,4 +1,4 @@
-[cDyl_InitAsync()] + 0x30:
+[cDyl_InitAsync(void)] + 0x30:
 b init
 
 0x803449dc:

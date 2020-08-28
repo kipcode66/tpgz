@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "libtpw_c/include/system.h"
+#include "libtpw_c/include/controller.h"
 #include "font.h"
 #include "menu.h"
 #include "controller.h"
@@ -477,7 +478,7 @@ void ItemWheelMenu::render(Font& font) {
     slot_items[22].item_id = tp_gameInfo.inventory.item_values.ancient_sky_book_id;
     slot_items[23].item_id = tp_gameInfo.inventory.item_values.slingshot_id;
 
-    if (current_input == 256 && a_held == false) {
+    if (current_input == Controller::Mote::A && a_held == false) {
         switch (cursor.x) {
             uint8_t current_internal_item_id;
             case SLOT_0: {

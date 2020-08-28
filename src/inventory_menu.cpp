@@ -2,6 +2,7 @@
 #include "menu.h"
 #include "controller.h"
 #include "utils.h"
+#include "libtpw_c/include/controller.h"
 
 #define LINES 2
 
@@ -24,7 +25,7 @@ void InventoryMenu::render(Font& font) {
 
     if (!init_once) {current_input = 0;init_once = true;}
     
-    if (current_input == 256 && a_held == false) {
+    if (current_input == Controller::Mote::A && a_held == false) {
         switch (cursor.x) {
             case ITEM_WHEEL_INDEX: {
                 inventory_visible = false;

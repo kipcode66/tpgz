@@ -1,6 +1,7 @@
 #include "font.h"
 #include "menu.h"
 #include "controller.h"
+#include "libtpw_c/include/controller.h"
 #include "utils.h"
 
 #define MAX_WATCHES 10
@@ -187,7 +188,7 @@ void MemoryMenu::render(Font& font) {
 
     if (!init_once) {current_input = 0;init_once = true;}
 
-    if (current_input == 256 && a_held == false) {
+    if (current_input == Controller::Mote::A && a_held == false) {
         // finish
         Watches[cursor.x].line_selected = true;
     }

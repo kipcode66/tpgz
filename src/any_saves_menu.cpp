@@ -154,7 +154,7 @@ void AnySavesMenu::render(Font& font) {
         init_once = true;
     }
 
-    if (current_input == 256 && a_held == false) {
+    if (current_input == Controller::Mote::A && a_held == false) {
         switch (cursor.x) {
             case ORDON_GATE_CLIP_INDEX: {
                 loadFile("tpgzw/save_files/any/ordon_gate_clip.bin");

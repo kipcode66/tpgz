@@ -269,7 +269,7 @@ void HundoSavesMenu::render(Font& font) {
         init_once = true;
     }
 
-    if (current_input == 256 && a_held == false) {
+    if (current_input == Controller::Mote::A && a_held == false) {
         switch (cursor.x) {
             case HND_GOATS_1_INDEX: {
                 loadFile("tpgzw/save_files/hundo/goats.bin");

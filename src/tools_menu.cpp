@@ -1,6 +1,7 @@
 #include "libtpw_c/include/actor.h"
 #include "libtpw_c/include/tp.h"
 #include "libtpw_c/include/system.h"
+#include "libtpw_c/include/controller.h"
 #include "menu.h"
 #include "input_viewer.h"
 #include "controller.h"
@@ -74,7 +75,7 @@ void ToolsMenu::render(Font& font) {
     Utilities::move_cursor(cursor, LINES);
     Utilities::render_lines(font, lines, cursor.x, LINES);
 
-    if (current_input == 256 && a_held == false) {
+    if (current_input == Controller::Mote::A && a_held == false) {
         ToolItems[cursor.x].active = !ToolItems[cursor.x].active;
         if (ToolItems[cursor.x].active) {
             switch (cursor.x) {

@@ -1,5 +1,6 @@
 #include "menu.h"
 #include "controller.h"
+#include "libtpw_c/include/controller.h"
 #include "utils.h"
 #include <stdio.h>
 #include "libtpw_c/include/tp.h"
@@ -54,7 +55,7 @@ void SceneMenu::render(Font& font) {
     Utilities::move_cursor(cursor, LINES);
     Utilities::render_lines(font, lines, cursor.x, LINES, 160.0f);
 
-    if (current_input == 256 && a_held == false) {
+    if (current_input == Controller::Mote::A && a_held == false) {
         SceneItems[cursor.x].active = !SceneItems[cursor.x].active;
         if (SceneItems[cursor.x].active) {
             switch (cursor.x) {

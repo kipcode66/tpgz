@@ -31,7 +31,7 @@ void MainMenu::render(Font& font) {
 
     Utilities::move_cursor(cursor, LINES);
 
-    if (current_input == 256 && !a_held) {
+    if (current_input == Controller::Mote::A && !a_held) {
         switch (cursor.x) {
             case MEMORY_INDEX: {
                 mm_visible = false;

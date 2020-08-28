@@ -1,6 +1,7 @@
 #include "font.h"
 #include "menu.h"
 #include "controller.h"
+#include "libtpw_c/include/controller.h"
 #include "utils.h"
 #include "libtpw_c/include/flag.h"
 
@@ -64,7 +65,7 @@ void FlagsMenu::render(Font& font) {
         init_once = true;
     }
 
-    if (current_input == 256 && a_held == false) {
+    if (current_input == Controller::Mote::A && a_held == false) {
         switch (cursor.x) {
             case BOSS_FLAG_INDEX: {
                 if (boss_flag) {

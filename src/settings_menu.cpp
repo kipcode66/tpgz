@@ -1,6 +1,7 @@
 #include "gcn_c/include/card.h"
 #include "libtpw_c/include/system.h"
 #include "libtpw_c/include/tp.h"
+#include "libtpw_c/include/controller.h"
 #include "controller.h"
 #include "menu.h"
 #include "utils.h"
@@ -37,7 +38,7 @@ void SettingsMenu::render(Font& font) {
 
     Utilities::move_cursor(cursor, LINES);
 
-    if (current_input == 256 && a_held == false) {
+    if (current_input == Controller::Mote::A && a_held == false) {
         switch (cursor.x) {
             case LOG_LEVEL_INDEX: {
                 if (g_log_level < 2) {
