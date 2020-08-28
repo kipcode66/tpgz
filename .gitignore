@@ -10,3 +10,4 @@ external/fonts/target
 external/fonts/build
 romhack.exe
 *.iso
+iso_extract/
