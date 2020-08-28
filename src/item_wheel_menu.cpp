@@ -628,7 +628,7 @@ void ItemWheelMenu::render(Font& font) {
         }
     }
 
-    if (current_input == 16) {
+    if (current_input == Controller::Mote::Z) {
         switch (cursor.x) {
             case SLOT_0: {
                 tp_gameInfo.inventory.item_values.gale_boomerang_id = GALE_BOOMERANG;
