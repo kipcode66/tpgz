@@ -347,7 +347,7 @@ extern bool hundo_saves_visible;
 
 // scene
 extern bool scene_menu_visible;
-#define SCENE_AMNT 7
+#define SCENE_AMNT 8
 namespace Scene {
     enum SceneIndex {
         DISABLE_BG_INDEX,
