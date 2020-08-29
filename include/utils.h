@@ -14,8 +14,6 @@ namespace Utilities {
     void render_lines(Font& font, Line lines[], int cursor, int LINES, float menu_toggle_switch_x_offset = 200.0f);
     void trigger_load();
     void change_tunic_color();
-    void disable_bg_music();
-    void enable_bg_music();
     void disable_sfx();
     void enable_sfx();
     void show_link_debug_info(Font& font);

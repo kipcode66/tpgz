@@ -46,6 +46,13 @@ void game_loop() {
         MenuRendering::close_active_menus();
     }
 
+    //Patch for the BitE Crash (MOVE TO A DIFFERENT FILE LATER)
+
+    if (tp_gameInfo.current_stage!=NULL&&strncmp((char*)tp_gameInfo.current_stage,"F_SP102",0x8)==0){
+        memset((void *)0x804BCB94,0,0x4);
+    }
+
+
     GZFlags::apply_active_flags();
 
     // This is the funciton that game_loop replaces when patched, so we call it here

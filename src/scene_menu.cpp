@@ -14,13 +14,11 @@ using namespace Scene;
 SceneItem SceneItems[SCENE_AMNT] = {
     {FREEZE_ACTOR_INDEX, false},
     {HIDE_ACTOR_INDEX, false},
-    {DISABLE_BG_INDEX, false},
     {DISABLE_SFX_INDEX, false},
     {FREEZE_CAMERA_INDEX, false},
     {HIDE_HUD_INDEX, false}};
 
 Line lines[LINES] = {
-    {"disable bg music", DISABLE_BG_INDEX, "Disables background and enemy music", true, &SceneItems[DISABLE_BG_INDEX].active},
     {"disable sfx", DISABLE_SFX_INDEX, "Disables sound effects (item, weather, etc.)", true, &SceneItems[DISABLE_SFX_INDEX].active},
     {"freeze actors", FREEZE_ACTOR_INDEX, "Freezes actors", true, &SceneItems[FREEZE_ACTOR_INDEX].active},
     {"freeze camera", FREEZE_CAMERA_INDEX, "Locks the camera in place", true, &SceneItems[FREEZE_CAMERA_INDEX].active},

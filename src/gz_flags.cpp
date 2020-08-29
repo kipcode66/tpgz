@@ -18,7 +18,6 @@ GZFlag GZ_Flags[MAX_GZ_FLAGS] = {
     {&SceneItems[Scene::FREEZE_CAMERA_INDEX].active, System::lock_camera, System::unlock_camera},
     {&SceneItems[Scene::HIDE_HUD_INDEX].active, System::hide_hud, System::show_hud},
     {&g_tunic_color_flag, Utilities::change_tunic_color, Utilities::change_tunic_color},
-    {&SceneItems[Scene::DISABLE_BG_INDEX].active, Utilities::disable_bg_music, Utilities::enable_bg_music},
     {&SceneItems[Scene::DISABLE_SFX_INDEX].active, Utilities::disable_sfx, Utilities::enable_sfx}};
 
 namespace GZFlags {
