@@ -19,5 +19,7 @@ namespace Utilities {
     void show_link_debug_info(Font& font);
     void load_gz_card(bool &card_load);
     void change_font(Font& font, const _Font& font_bytes, const char* font_texture_data);
+    void disable_bg_music();
     void load_mem_card(MemCard::Card &card, SaveLayout &save_layout);
+    void enable_bg_music();
 }  // namespace Utilities

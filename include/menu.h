@@ -350,6 +350,7 @@ extern bool scene_menu_visible;
 #define SCENE_AMNT 7
 namespace Scene {
     enum SceneIndex {
+        DISABLE_BG_INDEX,
         DISABLE_SFX_INDEX,
         FREEZE_ACTOR_INDEX,
         FREEZE_CAMERA_INDEX,
