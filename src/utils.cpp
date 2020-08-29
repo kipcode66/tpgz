@@ -304,6 +304,12 @@ namespace Utilities {
         }
     }
 
+    void disable_bg_music() {
+        tp_zelAudio.bg_audio = 0.0f;
+        //tp_zelAudio.enemy_bg_music_volume = 0.0f;
+        //tp_zelAudio.hyrule_castle_bg_music_volume = 0.0f;
+    }
+
     void load_mem_card(MemCard::Card &card, SaveLayout &save_layout) {
         card.card_result = CARDOpen(0, card.file_name_buffer, &card.card_info);
         if (card.card_result == Ready) {
@@ -317,6 +323,12 @@ namespace Utilities {
             }
             card.card_result = CARDClose(&card.card_info);
         }
+    }
+
+    void enable_bg_music() {
+        tp_zelAudio.bg_audio = 1.0f;
+        //tp_zelAudio.enemy_bg_music_volume = 1.0f;
+        //tp_zelAudio.hyrule_castle_bg_music_volume = 1.0f;
     }
 
     // void change_font(Font& font, const _Font& font_bytes, const char* font_texture_data ) {
