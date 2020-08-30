@@ -39,7 +39,6 @@ wit COPY built_iso_extract tpgzw.iso
 ```
 Don't be alarmed if WIT says it can't find a file; It should still work once the command is complete.
 Once the command is complete you can either run the iso on dolphin or run it on a usb loader such as wiiflow.
----
 
 ---  
 If you want to compile alternative fonts:  

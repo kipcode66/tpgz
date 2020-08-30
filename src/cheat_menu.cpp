@@ -40,7 +40,7 @@ Line lines[LINES] = {
     {"infinite slingshot", InfiniteSlingshot, "Gives Link 99 slingshot pellets", true, &CheatItems[InfiniteSlingshot].active},
     {"invincible", Invincible, "Makes Link invincible", true, &CheatItems[Invincible].active},
     {"invincible enemies", InvincibleEnemies, "Makes some enemies invincible", true, &CheatItems[InvincibleEnemies].active},
-    {"moon jump", MoonJump, "Hold R+A to moon jump", true, &CheatItems[MoonJump].active}};
+    {"moon jump", MoonJump, "Hold Z+C+A to moon jump", true, &CheatItems[MoonJump].active}};
 
 namespace Cheats {
     using namespace Controller;

@@ -104,9 +104,9 @@ namespace Commands {
     };
 
     static Command Commands[7] = {
-        {false, 0x6200, store_position},
-        {false, 0x6100, load_position},
-        {false, 0x6800, moon_jump},
+        {false, (Controller::Mote::A | Controller::Mote::Z | Controller::Mote::MINUS), store_position},
+        {false, (Controller::Mote::A | Controller::Mote::Z | Controller::Mote::TWO), load_position},
+        {false, (Controller::Mote::A | Controller::Mote::Z | Controller::Mote::C), moon_jump},
         {false, 0x6410, reload_area},
         {false, 0x6C00, toggle_timer},
         {false, 0x6420, hit_reset},
