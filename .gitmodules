@@ -3,4 +3,4 @@
 	url = https://github.com/hallcristobal/gcn_c.git
 [submodule "external/libtpw_c"]
 	path = external/libtpw_c
-	url = https://github.com/kipcode66/libtpw_c.git
+	url = https://github.com/jdflyer/libtpw_c.git
