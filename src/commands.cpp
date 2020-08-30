@@ -65,7 +65,7 @@ namespace Commands {
     };
 
     void toggle_timer() {
-        if (button_this_frame == 0x0110 && button_last_frame != 0x0110) {
+        if (button_this_frame == 0x6C00 && button_last_frame != 0x6C00) {
             timer_started = !timer_started;
         };
     }
@@ -109,7 +109,7 @@ namespace Commands {
         {false, 0x6800, moon_jump},
         {false, 0x6410, reload_area},
         {false, 0x6C00, toggle_timer},
-        {false, 0x6420, hit_reset},
+        {false, 0x6410, hit_reset},
         {false, 0x6A00, gorge_void}};
 
     void process_inputs() {
