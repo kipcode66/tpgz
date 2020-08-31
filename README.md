@@ -2,7 +2,7 @@
 
 ## About
 
-tpgz is a rom hack of the game Twilight Princess geared towards enhancing practice and testing for speedrunning.
+tpgzw is a rom hack of the game Twilight Princess Wii geared towards enhancing practice and testing for speedrunning.
 
 <p align="center">
   <img src="./res/icons/giphy.gif?raw=true" />
@@ -11,7 +11,7 @@ tpgz is a rom hack of the game Twilight Princess geared towards enhancing practi
 ## Features
 
 ```
-Use L+R+dpadDown to open the main menu which contains the following options:
+Use Z+C+Minus to open the main menu which contains the following options:
 
 cheats menu:
 - infinite air                  // Gives Link infinite air underwater
@@ -23,7 +23,7 @@ cheats menu:
 - infinite slingshot            // Gives Link 99 slingshot pellets
 - invincible                    // Makes Link invincible (no hurtbox, but can still take fall damage and drown)
 - invincible enemies*           // Makes some enemies invincible (infinite health)
-- moon jump                     // Hold R+A to moon jump
+- moon jump                     // Hold Z+C+A to moon jump
 - super clawshot (TBD)          // Clawshot is long and can grab most things (not implemented yet)
 - super spinner (TBD)           // Spinner is very fast and can hover (not implemented yet)
 
@@ -38,6 +38,7 @@ flags menu:
 - midna on z                    // Toggle flag for being able to use Midna
 - transform/warp                // Toggle flag for transforming/warping
 - wolf sense                    // Toggle flag for having wolf sense
+- hide weapon as wolf           // Toggle flag for hiding weapons as wolf
 
 inventory menu:
 - item wheel                    // Can set the 24 item wheel slots to any item
@@ -67,16 +68,16 @@ settings menu:
 - area reload behavior          // load area = Reload last area; load file = Reload last file
 
 tools menu:
-- area reload                   // Use L+R+Start+A to reload current area
+- area reload                   // Use Z+C+B+Plus to reload current area
 - fast bonk recovery            // Reduces bonk animation significantly
 - fast movement                 // Link's movement is much faster
-- gorge checker                 // Use L+Z to warp to Kakariko Gorge
+- gorge checker                 // Use Z+C+A+1 to warp to Kakariko Gorge
 - input viewer                  // Show current inputs (buttons only for now)
 - link debug info               // Show Link's position, angle, and speed
 - no sinking in sand            // Link won't sink in sand
 - roll checker                  // Frame counter for chaining rolls
-- teleport                      // dpadUp to set, dpadDown to load
-- timer                         // Frame timer: Z+A to start/stop, Z+B to reset
+- teleport                      // Z+C+1 to set, Z+C+2 to load
+- timer                         // Frame timer: Z+C+A+B to start/stop, Z+C+Plus to reset
 - link tunic color:             // Changes Link's tunic color (green, blue, red, orange, yellow, white, or cycle)
 
 warping menu:
@@ -104,7 +105,9 @@ warping menu:
 
 ## Download / Usage
 
-You will need the **Twilight Princess ISO** -- currently only the US version is supported.
+You will need the **Twilight Princess ISO** -- currently only the Wii NTSC 1.0 version is supported.
+
+*NOTE: This process won't work for now. We are currently trying to make a new one.*
 
 1. Download the latest release [here](https://github.com/hallcristobal/tpgzw/releases).
 
@@ -123,7 +126,7 @@ You will need the **Twilight Princess ISO** -- currently only the US version is 
 ## Project structure
 
 ```
-tpgz
+tpgzw
 ├───.github
 │   └───workflows         // github action(s) used to test code compilation
 ├───external              // external libraries and programs consumed by tpgz
@@ -138,11 +141,11 @@ tpgz
 │       │   └───workflows // github action(s) used to test code compilation
 │       ├───include       // header files for libtpw_c
 │       └───src           // source code for libtpw_c
-├───include               // header files for tpgz
+├───include               // header files for tpgzw
 │   └───fonts             // individual font properties such as width, height, glyphs, etc.
 ├───res                   // external resources to be consumed
 │   └───save_files        // raw quest log bytes to be injected at compile time
-└───src                   // source code for tpgz
+└───src                   // source code for tpgzw
     └───fonts             // raw bytes for fonts
 ```
 
