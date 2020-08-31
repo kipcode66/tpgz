@@ -49,7 +49,7 @@ Line lines[LINES] = {
     {"link debug info", LINK_DEBUG_INDEX, "Show Link's position, angle, and speed", true, &ToolItems[LINK_DEBUG_INDEX].active},
     {"no sinking in sand", SAND_INDEX, "Link won't sink in sand", true, &ToolItems[SAND_INDEX].active},
     {"roll checker", ROLL_INDEX, "Frame counter for chaining rolls", true, &ToolItems[ROLL_INDEX].active},
-    {"teleport", TELEPORT_INDEX, "Z+A+Minus to set, Z+A+2 to load (CURRENTLY CRASHES GAME)", true, &ToolItems[TELEPORT_INDEX].active},
+    {"teleport", TELEPORT_INDEX, "Z+A+Minus to set, Z+A+2 to load", true, &ToolItems[TELEPORT_INDEX].active},
     {"timer", TIMER_INDEX, "Frame timer: Z+A to start/stop, Z+B to reset", true, &ToolItems[TIMER_INDEX].active},
     {"link tunic color:   ", TUNIC_COLOR_INDEX, "Changes Link's tunic color", false, nullptr, true, {"green", "blue", "red", "orange", "yellow", "white", "cycle"}, &g_tunic_color}};
 
