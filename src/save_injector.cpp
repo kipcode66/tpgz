@@ -14,7 +14,7 @@ namespace SaveInjector {
     // inject qlog bytes into RAM
     void inject_save() {
         // copy out scratchpad
-        memcpy((void*)&tp_gameInfo, (void*)practice_file.qlog_bytes, 2392);
+        memcpy((void*)&tp_gameInfo, (void*)practice_file.qlog_bytes, 2708);
     };
 
     void inject_default_before() {
