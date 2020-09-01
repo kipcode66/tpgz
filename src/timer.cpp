@@ -4,6 +4,7 @@
 #include "timer.h"
 
 bool timer_visible;
+extern bool g_drop_shadows;
 
 namespace Timer {
     static int timer_frame = 0;
@@ -24,7 +25,7 @@ namespace Timer {
         }
         sprintf(timer, "%d", timer_frame);
         previous_frame = current_frame;
-        font.renderChars(timer, 525.0f, 420.0f, 0XFFFFFFFF);
+        font.gz_renderChars(timer, 525.0f, 420.0f, 0XFFFFFFFF, g_drop_shadows);
 
     }  // namespace Timer
 }  // namespace Timer

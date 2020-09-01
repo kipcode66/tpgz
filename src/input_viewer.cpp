@@ -7,61 +7,62 @@
 #include "input_viewer.h"
 
 bool iv_visible;
+extern bool g_drop_shadows;
 
 namespace InputViewer {
     void render(Font& font) {
         using namespace Controller;
 
         if (button_is_down(A)) {
-            font.renderChars("A", 150.0f, 440.0f, 0x00CC00FF);
+            font.gz_renderChars("A", 150.0f, 440.0f, 0x00CC00FF, g_drop_shadows);
         }
 
         if (button_is_down(B)) {
-            font.renderChars("B", 165.f, 440.0f, 0xDC143CFF);
+            font.gz_renderChars("B", 165.f, 440.0f, 0xDC143CFF, g_drop_shadows);
         }
 
         if (button_is_down(ONE)) {
-            font.renderChars("1", 180.f, 440.0f, 0xFFFFFFFF);
+            font.gz_renderChars("1", 180.f, 440.0f, 0xFFFFFFFF, g_drop_shadows);
         }
 
         if (button_is_down(TWO)) {
-            font.renderChars("2", 195.f, 440.0f, 0xFFFFFFFF);
+            font.gz_renderChars("2", 195.f, 440.0f, 0xFFFFFFFF, g_drop_shadows);
         }
 
         if (button_is_down(Z)) {
-            font.renderChars("Z", 210.f, 440.0f, 0x8A2BE2FF);
+            font.gz_renderChars("Z", 210.f, 440.0f, 0x8A2BE2FF, g_drop_shadows);
         }
 
         if (button_is_down(C)) {
-            font.renderChars("C", 325.f, 440.0f, 0xFFFFFFFF);
+            font.gz_renderChars("C", 325.f, 440.0f, 0xFFFFFFFF, g_drop_shadows);
         }
 
         if (button_is_down(PLUS)) {
-            font.renderChars("+", 240.f, 440.0f, 0xFFFFFFFF);
+            font.gz_renderChars("+", 240.f, 440.0f, 0xFFFFFFFF, g_drop_shadows);
         }
 
         if (button_is_down(MINUS)) {
-            font.renderChars("-", 255.f, 440.0f, 0xFFFFFFFF);
+            font.gz_renderChars("-", 255.f, 440.0f, 0xFFFFFFFF, g_drop_shadows);
         }
 
         if (button_is_down(DPAD_LEFT)) {
-            font.renderChars("DL", 280.f, 440.0f, 0xFFFFFFFF);
+            font.gz_renderChars("DL", 280.f, 440.0f, 0xFFFFFFFF, g_drop_shadows);
         }
 
         if (button_is_down(DPAD_DOWN)) {
-            font.renderChars("DD", 305.f, 440.0f, 0xFFFFFFFF);
+            font.gz_renderChars("DD", 305.f, 440.0f, 0xFFFFFFFF, g_drop_shadows);
         }
 
         if (button_is_down(DPAD_RIGHT)) {
-            font.renderChars("DR", 330.f, 440.0f, 0xFFFFFFFF);
+            font.gz_renderChars("DR", 330.f, 440.0f, 0xFFFFFFFF, g_drop_shadows);
         }
 
         if (button_is_down(DPAD_UP)) {
-            font.renderChars("DU", 355.f, 440.0f, 0xFFFFFFFF);
+            font.gz_renderChars("DU", 355.f, 440.0f, 0xFFFFFFFF, g_drop_shadows);
         }
 
         if (button_is_down(HOME)) {
-            font.renderChars("H", 380.f, 440.0f, 0x8A2BE2FF);
+            font.gz_renderChars("H", 380.f, 440.0f, 0x8A2BE2FF, g_drop_shadows);
         }
     }
 }  // namespace InputViewer

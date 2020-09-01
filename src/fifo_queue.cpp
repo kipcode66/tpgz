@@ -6,6 +6,7 @@
 
 static Font Consolas;
 bool fifo_visible;
+extern bool g_drop_shadows;
 
 void FIFOQueue::renderItems(_FIFOQueue& Queue, Font& font) {
     for (int i = 0; i < MAX_MESSAGES; i++) {
@@ -21,7 +22,7 @@ void FIFOQueue::renderItems(_FIFOQueue& Queue, Font& font) {
         }
         color |= alpha;
         if (fifo_visible) {
-            font.renderChars(Queue.messages[i].msg, 5.0f, offset, color);
+            font.gz_renderChars(Queue.messages[i].msg, 5.0f, offset, color, g_drop_shadows && alpha != 0);
         }
     }
 };

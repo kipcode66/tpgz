@@ -169,7 +169,9 @@ namespace Utilities {
             }
 
             // render line descriptions
-            font.gz_renderChars(input_lines[i].description, 25.0f, 440.f, description_color, false);
+            if (input_lines[i].idx == cursor) {
+                font.gz_renderChars(input_lines[i].description, 25.0f, 440.f, description_color, g_drop_shadows);
+            }
         };
     }
 
