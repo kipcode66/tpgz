@@ -5,13 +5,13 @@ developer-name = "Twilight Princess Community"
 full-developer-name = "Speedrun Community"
 
 [src]
-iso = "build/iso_extract/DATA"
+iso = "gzwe01_iso/DATA"
 patch = "patch.asm"
 map = "map/Rfinal/Release/RframeworkF.map"
 
 [build]
 map = "build/GZ2E01.map"
-iso = "iso_extract/DATA"
+iso = "build/gzwe01_iso/DATA"
 
 [link]
 entries = ["game_loop", "read_controller", "draw", "init"]
