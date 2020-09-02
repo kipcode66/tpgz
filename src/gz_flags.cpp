@@ -1,5 +1,6 @@
 #include "gz_flags.h"
 #include "gorge.h"
+#include "bit.h"
 #include "rollcheck.h"
 #include "utils.h"
 #include "menu.h"
@@ -11,6 +12,7 @@ bool inject_save_flag = false;
 
 GZFlag GZ_Flags[MAX_GZ_FLAGS] = {
     {&ToolItems[Tools::GORGE_INDEX].active, GorgeVoidIndicator::run},
+    {&ToolItems[Tools::BIT_INDEX].active, BiTIndicator::run},
     {&ToolItems[Tools::ROLL_INDEX].active, RollIndicator::run},
     {&inject_save_flag, Utilities::trigger_load},
     {&SceneItems[Scene::FREEZE_ACTOR_INDEX].active, Actor::freeze_actors, Actor::unfreeze_actors},

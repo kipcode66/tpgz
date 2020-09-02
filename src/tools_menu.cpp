@@ -29,7 +29,8 @@ Tool ToolItems[TOOL_AMNT] = {
     {SAND_INDEX, false},
     {ROLL_INDEX, false},
     {TELEPORT_INDEX, false},
-    {TIMER_INDEX, false}};
+    {TIMER_INDEX, false},
+    {BIT_INDEX, false}};
 
 TunicColor TunicColors[TUNIC_COLOR_AMNT] = {
     {"green", false},
@@ -41,10 +42,11 @@ TunicColor TunicColors[TUNIC_COLOR_AMNT] = {
     {"cycle", false}};
 
 Line lines[LINES] = {
-    {"area reload", RELOAD_AREA_INDEX, "Use L+R+Start+A to reload current area", true, &ToolItems[RELOAD_AREA_INDEX].active},
+    {"area reload", RELOAD_AREA_INDEX, "Use Z+C+B+Plus to reload current area", true, &ToolItems[RELOAD_AREA_INDEX].active},
     {"fast bonk recovery", FAST_BONK_INDEX, "Reduces bonk animation significantly", true, &ToolItems[FAST_BONK_INDEX].active},
     {"fast movement", FAST_MOVEMENT_INDEX, "Link's movement is much faster", true, &ToolItems[FAST_MOVEMENT_INDEX].active},
-    {"gorge checker", GORGE_INDEX, "Use L+Z to warp to Kakariko Gorge", true, &ToolItems[GORGE_INDEX].active},
+    {"gorge checker", GORGE_INDEX, "Use Z+C+A+1 to warp to Kakariko Gorge", true, &ToolItems[GORGE_INDEX].active},
+    {"BiT checker", BIT_INDEX, "Use Z+C+A+2 to warp to Ordon Bridge", true, &ToolItems[BIT_INDEX].active},
     {"input viewer", INPUT_VIEWER_INDEX, "Show current inputs (buttons only for now)", true, &ToolItems[INPUT_VIEWER_INDEX].active},
     {"link debug info", LINK_DEBUG_INDEX, "Show Link's position, angle, and speed", true, &ToolItems[LINK_DEBUG_INDEX].active},
     {"no sinking in sand", SAND_INDEX, "Link won't sink in sand", true, &ToolItems[SAND_INDEX].active},
@@ -89,6 +91,14 @@ void ToolsMenu::render(Font& font) {
                         Commands::enable_command(Commands::GORGE_VOID);
                     } else {
                         Commands::disable_command(Commands::GORGE_VOID);
+                    }
+                    break;
+                }
+                case BIT_INDEX: {
+                    if (ToolItems[BIT_INDEX].active) {
+                        Commands::enable_command(Commands::BIT);
+                    } else {
+                        Commands::disable_command(Commands::BIT);
                     }
                     break;
                 }

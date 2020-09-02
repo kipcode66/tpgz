@@ -368,13 +368,14 @@ namespace Scene {
 extern Scene::SceneItem SceneItems[SCENE_AMNT];
 
 // tools
-#define TOOL_AMNT 11
+#define TOOL_AMNT 12
 namespace Tools {
     enum ToolsIndex {
         RELOAD_AREA_INDEX,
         FAST_BONK_INDEX,
         FAST_MOVEMENT_INDEX,
         GORGE_INDEX,
+        BIT_INDEX,
         INPUT_VIEWER_INDEX,
         LINK_DEBUG_INDEX,
         SAND_INDEX,
