@@ -11,12 +11,12 @@
 #include "fs.h"
 #include "font.h"
 
-#define VOID_HEIGHT -2098.58f
-#define NORMAL_ACC -3.4f
-#define NORMAL_TERM_VEL -200.0f
-#define BOOTS_ACC -7.65f
-#define BOOTS_TERM_VEL -300.0f
-#define TARGET_FRAME 62
+#define VOID_HEIGHT -2098.58
+#define NORMAL_ACC -3.4
+#define NORMAL_TERM_VEL -200.0
+#define BOOTS_ACC -7.65
+#define BOOTS_TERM_VEL -300.0
+#define TARGET_FRAME 28
 
 bool inject_bit_flag = false;
 extern Font font;
@@ -42,27 +42,27 @@ namespace BiTIndicator {
     void run() {
         Log log;
 
-        float dt = 0.0f;
+        double dt = 0;
 
         if (tp_zelAudio.link_debug_ptr != NULL && tp_gameInfo.momentum_ptr != NULL) {
             const bool has_boots = (tp_zelAudio.link_debug_ptr->current_boots & 0x02) != 0;
-            const float term_vel = has_boots ? BOOTS_TERM_VEL : NORMAL_TERM_VEL;
-            const float acc = has_boots ? BOOTS_ACC : NORMAL_ACC;
-            const float v_y1 = tp_gameInfo.momentum_ptr->link_momentum.y;
-            const float dist_from_last_ground = (tp_zelAudio.link_debug_ptr->position.y - tp_zelAudio.link_debug_ptr->last_ground_y_pos_void);
+            const double term_vel = has_boots ? BOOTS_TERM_VEL : NORMAL_TERM_VEL;
+            const double acc = has_boots ? BOOTS_ACC : NORMAL_ACC;
+            const double v_y1 = tp_gameInfo.momentum_ptr->link_momentum.y;
+            const double dist_from_last_ground = (tp_zelAudio.link_debug_ptr->position.y - tp_zelAudio.link_debug_ptr->last_ground_y_pos_void);
 
             // Calculate how many frames before reaching terminal velocity
-            float dt_1 = (term_vel - v_y1) / acc;
+            double dt_1 = (term_vel - v_y1) / acc;
             // Calculate how much height we will lose during that period
-            float x_dt_1 = dist_from_last_ground + (v_y1 + acc * dt_1) * dt_1;
+            double x_dt_1 = dist_from_last_ground + v_y1 * dt_1 + 0.5 * acc * dt_1 * dt_1;
 
             // If we reach terminal velocity after the voiding point, ...
             if (x_dt_1 <= VOID_HEIGHT) {
                 // ... just calculate the time remaining before void using the quadratic formula
-                dt = - (v_y1 + tp_sqrt((double)(v_y1 * v_y1 + 2 * acc * (x_dt_1 - VOID_HEIGHT)))) / acc;
+                dt = (- v_y1 - tp_sqrt((double)(v_y1 * v_y1 + 2 * acc * (VOID_HEIGHT - dist_from_last_ground)))) / acc + 0.5;
             } else {
                 // ... else, the time remaining before the void is the time to reach terminal velocity + linear time at velocity
-                dt = dt_1 + (x_dt_1 - VOID_HEIGHT) / term_vel;
+                dt = dt_1 + (VOID_HEIGHT - x_dt_1) / term_vel + 0.5;
             }
 
             if (tp_homeMenuSts.is_visible == 0 && !tp_fopScnRq.isLoading) {
