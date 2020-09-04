@@ -1,9 +1,9 @@
 #include "libtpw_c/include/tp.h"
-#include "libtpw_c/include/controller.h"
 #include "fifo_queue.h"
 #include "menu.h"
 #include "controller.h"
-#include "utils.h"
+#include "utils/cursor.hpp"
+#include "utils/lines.hpp"
 #include <stdio.h>
 #include "log.h"
 #define LINES 9
@@ -31,8 +31,8 @@ void MainMenu::render(Font& font) {
 
     Utilities::move_cursor(cursor, LINES);
 
-    if (current_input == Controller::Mote::A && !a_held) {
-        switch (cursor.x) {
+    if (button_is_down(Controller::A) && !button_is_held(Controller::A)) {
+        switch (cursor.y) {
             case MEMORY_INDEX: {
                 mm_visible = false;
                 memory_visible = true;
@@ -80,5 +80,5 @@ void MainMenu::render(Font& font) {
         }
     }
 
-    Utilities::render_lines(font, lines, cursor.x, LINES);
+    Utilities::render_lines(font, lines, cursor.y, LINES);
 };

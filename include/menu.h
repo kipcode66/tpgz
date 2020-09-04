@@ -6,12 +6,6 @@
 #include <string.h>
 #define CURSOR_RGBA 0x00CC00FF
 
-struct Cursor {
-    int y = 0;
-    int x = 0;
-};
-extern bool can_move_cursor;
-
 // main menu
 enum MainMenuIndex {
     CHEAT_INDEX,
@@ -133,18 +127,37 @@ struct ItemLookup {
 };
 
 // pause menu
-#define stuff 2
+enum PauseIndex {
+    ORDON_SWORD_INDEX,
+	MASTER_SWORD_INDEX,
+	WOOD_SHIELD_INDEX,
+	HYLIAN_SHIELD_INDEX,
+	HERO_TUNIC_INDEX,
+	ZORA_ARMOR_INDEX,
+	MAGIC_ARMOR_INDEX,
+	BOMB_CAPACITY_INDEX,
+	WALLET_INDEX,
+	ARROW_CAPACITY_INDEX,
+	ENDING_BLOW_INDEX,
+	SHIELD_BASH_INDEX,
+	BACKSLICE_INDEX,
+	HELM_SPLITTER_INDEX,
+	MORTAL_DRAW_INDEX,
+	JUMP_STRIKE_INDEX,
+	GREAT_SPIN_INDEX
+};
+
+
 extern bool pause_visible;
 
 // cheats
 extern bool cheats_visible;
 
 // warping
-#define stuff 2
 extern bool warping_visible;
 
 // memory
-#define stuff 2
+#define MAX_WATCHES 10
 extern bool memory_visible;
 
 enum MemoryType {
@@ -169,18 +182,20 @@ enum MemoryColumns {
 
 struct MemoryWatch {
     uint32_t address = 0x80000000;
-    float x = 100.0f;
+    float x = 400.0f;
     float y = 100.0f;
     bool hex = false;
-    MemoryType type = u32;
+    uint8_t type = string;
     uint16_t offset = 0x0000;
     uint32_t value;
     bool visible = false;
     bool line_selected = false;
+    bool value_selected = false;
 };
 
-// flags
+extern MemoryWatch Watches[MAX_WATCHES];
 
+// flags
 enum FlagsIndex {
     BOSS_FLAG_INDEX,
     RUPEE_CS_FLAG_INDEX,
@@ -453,9 +468,7 @@ struct Line {
     char description[MAX_DESCRIPTION_LENGTH];
     bool toggleable = false;
     bool* activation_flag;
-    bool is_list = false;
-    ListMember list_member[MAX_LIST_ITEMS];
-    int* list_member_idx;
+    uint8_t max_y_cursor_options;
 };
 
 class Menu {
@@ -547,7 +560,7 @@ class ToolsMenu : public Menu {
     static void render(Font& font);
 };
 
-#define MAX_MENU_RENDER_FLAGS 16
+#define MAX_MENU_RENDER_FLAGS 14
 
 struct MenuRenderFlag {
     bool* activation_flag;
@@ -566,8 +579,6 @@ MenuRenderFlag MenuRenderFlags[MAX_MENU_RENDER_FLAGS] = {
     {&scene_menu_visible, SceneMenu::render},
     {&settings_visible, SettingsMenu::render},
     {&tools_visible, ToolsMenu::render},
-    {&ToolItems[Tools::INPUT_VIEWER_INDEX].active, InputViewer::render},
-    {&ToolItems[Tools::TIMER_INDEX].active, Timer::render},
     {&pause_visible, PauseMenu::render},
     {&any_saves_visible, AnySavesMenu::render},
     {&hundo_saves_visible, HundoSavesMenu::render}};

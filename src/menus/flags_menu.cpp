@@ -1,8 +1,10 @@
 #include "font.h"
 #include "menu.h"
 #include "controller.h"
+#include "libtpw_c/include/tp.h"
 #include "libtpw_c/include/controller.h"
-#include "utils.h"
+#include "utils/cursor.hpp"
+#include "utils/lines.hpp"
 #include "libtpw_c/include/flag.h"
 
 #define LINES 12
@@ -61,12 +63,12 @@ void FlagsMenu::render(Font& font) {
     }
 
     if (!init_once) {
-        current_input = 0;
+        Controller::reset_button(Controller::A);
         init_once = true;
     }
 
-    if (current_input == Controller::Mote::A && a_held == false) {
-        switch (cursor.x) {
+    if (button_is_down(Controller::A) && !button_is_held(Controller::A)) {
+        switch (cursor.y) {
             case BOSS_FLAG_INDEX: {
                 if (boss_flag) {
                     tp_bossFlags = 0x00;
@@ -128,5 +130,5 @@ void FlagsMenu::render(Font& font) {
     }
 
     Utilities::move_cursor(cursor, LINES);
-    Utilities::render_lines(font, lines, cursor.x, LINES, 150.0f);
+    Utilities::render_lines(font, lines, cursor.y, LINES, 150.0f);
 }

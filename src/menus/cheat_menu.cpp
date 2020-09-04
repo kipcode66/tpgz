@@ -8,7 +8,8 @@
 #include "controller.h"
 #include "cheats.h"
 #include "commands.h"
-#include "utils.h"
+#include "utils/cursor.hpp"
+#include "utils/lines.hpp"
 #include <string.h>
 #define LINES CHEAT_AMNT
 
@@ -138,13 +139,13 @@ void CheatsMenu::render(Font& font) {
         return;
     };
 
-    if (!init_once) {current_input = 0;init_once = true;}
+    if (!init_once) {Controller::reset_button(Controller::A);init_once = true;}
 
     Utilities::move_cursor(cursor, LINES);
 
-    if (current_input == Controller::Mote::A && a_held == false) {
-        CheatItems[cursor.x].active = !(CheatItems[cursor.x].active);
+    if (button_is_down(Controller::A) && !button_is_held(Controller::A)) {
+        CheatItems[cursor.y].active = !(CheatItems[cursor.y].active);
     }
 
-    Utilities::render_lines(font, lines, cursor.x, LINES, 180.0f);
+    Utilities::render_lines(font, lines, cursor.y, LINES, 180.0f);
 };

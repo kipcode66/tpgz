@@ -1,8 +1,10 @@
 #include "font.h"
 #include "menu.h"
 #include "controller.h"
+#include "save_injector.h"
 #include "libtpw_c/include/controller.h"
-#include "utils.h"
+#include "utils/cursor.hpp"
+#include "utils/lines.hpp"
 
 #define LINES 2
 
@@ -24,10 +26,10 @@ void PracticeMenu::render(Font& font) {
         return;
     };
 
-	if (!init_once) {current_input = 0;init_once = true;}
+	if (!init_once) {Controller::reset_button(Controller::A);init_once = true;}
 
-	if (current_input == Controller::Mote::A && a_held == false) {
-		switch (cursor.x) {
+	if (button_is_down(Controller::A) && !button_is_held(Controller::A)) {
+		switch (cursor.y) {
 			case ANY_INDEX: {
 				prac_visible = false;
 				any_saves_visible = true;
@@ -43,5 +45,5 @@ void PracticeMenu::render(Font& font) {
 
 	Utilities::move_cursor(cursor, LINES);
 
-	Utilities::render_lines(font, lines, cursor.x, LINES);
+	Utilities::render_lines(font, lines, cursor.y, LINES);
 };

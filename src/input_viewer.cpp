@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include "libtpw_c/include/tp.h"
+#include "libtpw_c/include/controller.h"
 #include "libtpw_c/include/system.h"
 #include "libtpw_c/include/flag.h"
 #include "controller.h"
 #include "font.h"
 #include "input_viewer.h"
+#include "menu.h"
 
 bool iv_visible;
 extern bool g_drop_shadows;
@@ -64,5 +66,15 @@ namespace InputViewer {
         if (button_is_down(HOME)) {
             font.gz_renderChars("H", 380.f, 440.0f, 0x8A2BE2FF, g_drop_shadows);
         }
+
+		// stick inputs
+        char control_x[7]; // control stick x
+        char control_y[7]; // control stick y
+
+		sprintf(control_x, "%d", (int8_t)(255*(tp_mPad.stick.x + 1)/2-128));
+        sprintf(control_y, "%d", (int8_t)(255*(tp_mPad.stick.y + 1)/2-128));
+
+		font.gz_renderChars(control_x, 10.0f, 440.0f, 0xFFFFFFFF, g_drop_shadows);
+        font.gz_renderChars(control_y, 45.0f, 440.0f, 0xFFFFFFFF, g_drop_shadows);
     }
 }  // namespace InputViewer

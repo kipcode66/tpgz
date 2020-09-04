@@ -117,4 +117,8 @@ namespace Controller {
             return false;
         }
     }
+
+    void reset_button(int idx) {
+        buttonStates[idx].is_down = false;
+    }
 }  // namespace Controller

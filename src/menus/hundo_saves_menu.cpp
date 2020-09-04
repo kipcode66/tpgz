@@ -4,7 +4,8 @@
 #include "menu.h"
 #include "controller.h"
 #include "fifo_queue.h"
-#include "utils.h"
+#include "utils/cursor.hpp"
+#include "utils/lines.hpp"
 #include "gorge.h"
 #include "rollcheck.h"
 #include "save_injector.h"
@@ -265,12 +266,12 @@ void HundoSavesMenu::render(Font& font) {
     };
 
     if (!init_once) {
-        current_input = 0;
+        Controller::reset_button(Controller::A);
         init_once = true;
     }
 
-    if (current_input == Controller::Mote::A && a_held == false) {
-        switch (cursor.x) {
+    if (button_is_down(Controller::A) && !button_is_held(Controller::A)) {
+        switch (cursor.y) {
             case HND_GOATS_1_INDEX: {
                 loadFile("tpgzw/save_files/hundo/goats.bin");
                 default_load();
@@ -794,5 +795,5 @@ void HundoSavesMenu::render(Font& font) {
     }
 
     Utilities::move_cursor(cursor, LINES);
-    Utilities::render_lines(font, lines, cursor.x, LINES);
+    Utilities::render_lines(font, lines, cursor.y, LINES);
 };

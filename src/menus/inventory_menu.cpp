@@ -1,7 +1,8 @@
 #include "font.h"
 #include "menu.h"
 #include "controller.h"
-#include "utils.h"
+#include "utils/cursor.hpp"
+#include "utils/lines.hpp"
 #include "libtpw_c/include/controller.h"
 
 #define LINES 2
@@ -23,10 +24,10 @@ void InventoryMenu::render(Font& font) {
         return;
     };
 
-    if (!init_once) {current_input = 0;init_once = true;}
+    if (!init_once) {Controller::reset_button(Controller::A);init_once = true;}
     
-    if (current_input == Controller::Mote::A && a_held == false) {
-        switch (cursor.x) {
+    if (button_is_down(Controller::A) && !button_is_held(Controller::A)) {
+        switch (cursor.y) {
             case ITEM_WHEEL_INDEX: {
                 inventory_visible = false;
                 item_wheel_visible = true;
@@ -42,5 +43,5 @@ void InventoryMenu::render(Font& font) {
 
     Utilities::move_cursor(cursor, LINES);
     
-    Utilities::render_lines(font, lines, cursor.x, LINES);
+    Utilities::render_lines(font, lines, cursor.y, LINES);
 };
