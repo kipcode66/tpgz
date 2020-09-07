@@ -77,7 +77,7 @@ tools menu:
 - no sinking in sand            // Link won't sink in sand
 - roll checker                  // Frame counter for chaining rolls
 - teleport                      // Z+C+1 to set, Z+C+2 to load
-- timer                         // Frame timer: Z+C+A+B to start/stop, Z+C+Plus to reset
+- timer                         // Frame timer: Z+C+A+B to start/stop, Z+C+B+Plus to reset
 - link tunic color:             // Changes Link's tunic color (green, blue, red, orange, yellow, white, or cycle)
 
 warping menu:
