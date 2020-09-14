@@ -214,7 +214,8 @@ extern bool flags_menu_visible;
 
 // practice
 #define ANY_INDEX 0
-#define HUNDO_INDEX 1
+#define WII_ANY_INDEX 1
+#define HUNDO_INDEX 2
 extern bool prac_visible;
 extern bool inject_save_flag;
 
@@ -271,6 +272,37 @@ enum AnyPracticeIndex {
 };
 
 extern bool any_saves_visible;
+
+// wii any saves
+// any% saves
+enum WiiAnyPracticeIndex {
+    WII_SEWERS_INDEX,
+    WII_HUGO_INDEX,
+    WII_FARON_INDEX,
+    WII_GROVE_INDEX,
+    WII_FT_INDEX,
+    WII_LAN1_INDEX,
+    WII_ELDIN_INDEX,
+    WII_MD_INDEX,
+    WII_LB1_INDEX,
+    WII_LAN2_INDEX,
+    WII_LB2_INDEX,
+    WII_MORPHEEL_INDEX,
+    WII_MDH_INDEX,
+    WII_POST_MDH_INDEX,
+    WII_AG1_INDEX,
+    WII_AG2_INDEX,
+    WII_POST_AG_INDEX,
+    WII_SPR_INDEX,
+    WII_CITS1_INDEX,
+    WII_CITS2_INDEX,
+    WII_POT1_INDEX,
+    WII_POT2_INDEX,
+    WII_HC1_INDEX,
+    WII_HC2_INDEX
+};
+
+extern bool wii_any_saves_visible;
 
 // hundo saves
 enum HundoPracticeIndex {
@@ -536,6 +568,12 @@ class AnySavesMenu : public Menu {
     static void render(Font& font);
 };
 
+class WiiAnySavesMenu : public Menu {
+   public:
+    WiiAnySavesMenu() : Menu() {}
+    static void render(Font& font);
+};
+
 class HundoSavesMenu : public Menu {
    public:
     HundoSavesMenu() : Menu() {}
@@ -560,7 +598,7 @@ class ToolsMenu : public Menu {
     static void render(Font& font);
 };
 
-#define MAX_MENU_RENDER_FLAGS 14
+#define MAX_MENU_RENDER_FLAGS 15
 
 struct MenuRenderFlag {
     bool* activation_flag;
@@ -581,6 +619,7 @@ MenuRenderFlag MenuRenderFlags[MAX_MENU_RENDER_FLAGS] = {
     {&tools_visible, ToolsMenu::render},
     {&pause_visible, PauseMenu::render},
     {&any_saves_visible, AnySavesMenu::render},
+    {&wii_any_saves_visible, WiiAnySavesMenu::render},
     {&hundo_saves_visible, HundoSavesMenu::render}};
 
 namespace MenuRendering {
