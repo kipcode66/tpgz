@@ -30,7 +30,7 @@ namespace Utilities {
                 if (practice_file.inject_options_after_load) {
                     practice_file.inject_options_after_load();
                 }
-                if (practice_file.inject_options_after_counter == apply_after_counter) {
+                if (practice_file.inject_options_after_counter <= apply_after_counter) {
                     apply_after_counter = 0;
                     practice_file.inject_options_after_counter = 0;
                     loading_initiated = false;

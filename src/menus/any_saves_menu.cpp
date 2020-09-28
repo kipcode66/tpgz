@@ -74,6 +74,7 @@ void default_load() {
     practice_file.inject_options_before_load = SaveInjector::inject_default_before;
     practice_file.inject_options_during_load = SaveInjector::inject_default_during;
     practice_file.inject_options_after_load = SaveInjector::inject_default_after;
+    practice_file.inject_options_after_counter = 0;
     inject_save_flag = true;
     fifo_visible = true;
     prac_visible = false;
