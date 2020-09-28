@@ -6,7 +6,7 @@
 #include "utils/cursor.hpp"
 #include "utils/lines.hpp"
 
-#define LINES 2
+#define LINES 3
 
 static Cursor cursor = {0,0};
 bool init_once = false;
@@ -15,6 +15,7 @@ PracticeFile practice_file;
 
 Line lines[LINES] = {
 	{"any%", ANY_INDEX, "Any% practice saves", false},
+	{"wii any%", WII_ANY_INDEX, "Wii Any% practice saves", false},
 	{"100%", HUNDO_INDEX, "100% practice saves", false}};
 
 void PracticeMenu::render(Font& font) {
@@ -33,6 +34,11 @@ void PracticeMenu::render(Font& font) {
 			case ANY_INDEX: {
 				prac_visible = false;
 				any_saves_visible = true;
+				return;
+			}
+			case WII_ANY_INDEX: {
+				prac_visible = false;
+				wii_any_saves_visible = true;
 				return;
 			}
 			case HUNDO_INDEX: {

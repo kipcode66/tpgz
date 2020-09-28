@@ -58,7 +58,7 @@ extern "C" uint32_t read_controller() {
     if (mm_visible || prac_visible || settings_visible || cheats_visible ||
         tools_visible || inventory_visible || item_wheel_visible || pause_visible ||
         memory_visible || warping_visible || flags_menu_visible ||
-        scene_menu_visible || any_saves_visible || hundo_saves_visible) {
+        scene_menu_visible || any_saves_visible || wii_any_saves_visible || hundo_saves_visible) {
         current_input = Controller::get_current_inputs();
         a_held = a_held_last_frame && current_input == Controller::Mote::A;
         a_held_last_frame = current_input == Controller::Mote::A;
